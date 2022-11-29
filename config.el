@@ -3,7 +3,7 @@
 (map! :leader
       (:prefix ("b". "buffer")
        :desc "Listar marcadores" "L" #'list-bookmarks
-       :desc "Salvar los marcadores actuales al documente de marcadores" "w" #'bookmark-save))
+       :desc "Salvar los marcadores actuales al documento de marcadores" "w" #'bookmark-save))
 
 (setq centaur-tabs-set-bar 'over
       centaur-tabs-set-icons t

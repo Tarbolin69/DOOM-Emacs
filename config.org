@@ -10,6 +10,7 @@ GNU Emacs, tambien conocido como el Monstruo del Dr. Stallman, es un editor de t
 + Opciones graficas (es un GUI)
 + Agregador de noticias (RSS)
 + Gestor de EMAIL
++ Reproductor de musica
 + Navegador Web
 
 Entro otras muchas. Tecnicamente, prodrias usar SOLAMENTE Emacs como tu Gestor de Ventanas (WM), y no te faltaria nada. ¿Significa esto que Emacs es el mejor editor de codigo? Ni en pedo. Si, hablando objetivamente es el mas completo al ser basicamente un sistema operative, pero yo, por lo menos, siguo usando primariamente Vim—es mas util para las cosas que YO hago. Pero, esto no significa que Emacs no sea bueno. Tiene muchas cosas piola como org-mode, que es lo que yo uso para tomar notas y hacer "README"s como este usando la opcion ":tangle" que tiene. Tiene buen soporte de auto-completacion para codigo. Permite crear paginas HTML a partir de documentos org, y asi. En todo honestidad, tambien se ve mejor que Vim (y yo, por supuesto, soy muy vanidoso ¯\_(ツ)_/¯ ).
@@ -78,7 +79,7 @@ Con los marcadores, uno puedo poner ciertos articulos en "favoritos" y acceder a
 (map! :leader
       (:prefix ("b". "buffer")
        :desc "Listar marcadores" "L" #'list-bookmarks
-       :desc "Salvar los marcadores actuales al documente de marcadores" "w" #'bookmark-save))
+       :desc "Salvar los marcadores actuales al documento de marcadores" "w" #'bookmark-save))
 #+end_src
 
 ** Buffers
