@@ -59,7 +59,7 @@ Doom EMACS, que es lo que uso yo, es basicamente un GNU Emacs pre-conigurado con
 - [[#zap-to-char][ZAP-TO-CHAR]]
 
 * PREFACIO
-Esta configuracion asume que usas tambien mi "init.el" y "packages.el", o si no, algunas (muchas) cosas no van a andar. Si no los vas a usar, al menos fijate que tengas activados y/o instalados los paquetes y otras necesidades relacionadas a esta configuracion.
+Esta configuracion asume que usas tambien mi "init.el" y "packages.el", o si no, algunas (muchas) cosas no van a andar. Si no los vas a usar, al menos fijate que tengas activados y/o instalados los paquetes y otras necesidades relacionadas a esta configuracion. Cuando quieras editar config.el, editas (o añadi) este documento, config.org. Los cambios se van a guardar automaticamente en config.el cuando salves.
 
 Agradecimientos a Derek Taylor, quien fue la inspiracion para esta configuracion.
 
