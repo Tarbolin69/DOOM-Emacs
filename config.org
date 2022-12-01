@@ -1,23 +1,24 @@
-#+TITLE: La Configuracion de DOOM Emacs de Tarbolin69
+#+TITLE: La Configuración de DOOM Emacs de Tarbolin69
 #+PROPERTY: header-args :tangle config.el
 
 [[https://github.com/doomemacs/doomemacs][-> Instrucciones para instalar DOOM Emacs <-]]
 
-GNU Emacs, tambien conocido como el Monstruo del Dr. Stallman, es un editor de texto GUI (contrario a Vim, que es CLI (a menos que uses GVIM, en cuyo caso tendrias que matarte)). A diferencia de otros editores GUI como VS Code o uno de 50 IDEs de JetBrains, es mucho, MUCHO menos pesado, permite mucha mas configuracion, y contiene cosas como:
+GNU Emacs, también conocido como el Monstruo del Dr. Stallman, es un editor de texto GUI (contrario a Vim, que es CLI (a menos que uses GVIM, en cuyo caso tendrías que matarte)). A diferencia de otros editores GUI como VS Code o uno de 50 IDEs de JetBrains, es mucho, MUCHO menos pesado, permite mucha mas configuración, y contiene cosas como:
 
 + Un gestor de archivos
 + Diferentes terminales nativas
-+ Opciones graficas (es un GUI)
++ Opciones gráficas (es un GUI)
 + Agregador de noticias (RSS)
 + Gestor de EMAIL
 + Reproductor de musica
 + Navegador Web
 
-Entro otras muchas. Tecnicamente, prodrias usar SOLAMENTE Emacs como tu Gestor de Ventanas (WM), y no te faltaria nada. ¿Significa esto que Emacs es el mejor editor de codigo? Ni en pedo. Si, hablando objetivamente es el mas completo al ser basicamente un sistema operative, pero yo, por lo menos, siguo usando primariamente Vim—es mas util para las cosas que YO hago. Pero, esto no significa que Emacs no sea bueno. Tiene muchas cosas piola como org-mode, que es lo que yo uso para tomar notas y hacer "README"s como este usando la opcion ":tangle" que tiene. Tiene buen soporte de auto-completacion para codigo. Permite crear paginas HTML a partir de documentos org, y asi. En todo honestidad, tambien se ve mejor que Vim (y yo, por supuesto, soy muy vanidoso ¯\_(ツ)_/¯ ).
+Entro otras muchas. Técnicamente, podrías usar SOLAMENTE Emacs como tu Gestor de Ventanas (WM), y no te faltaría nada. ¿Significa esto que Emacs es el mejor editor de código? Ni en pedo. Si, hablando objetivamente es el mas completo al ser básicamente un sistema operativo, pero yo, por lo menos, sigo usando primariamente Vim—es mas útil para las cosas que YO hago. Pero, esto no significa que Emacs no sea bueno. Tiene muchas cosas piola como org-mode, que es lo que yo uso para tomar notas y hacer "README"s como este usando la opción ":tangle" que tiene. Tiene buen soporte de auto-completado para código. Permite crear paginas HTML a partir de documentos org, y así. En todo honestidad, también se ve mejor que Vim (y yo, por supuesto, soy muy vanidoso ¯\_(ツ)_/¯ ).
 
-Doom EMACS, que es lo que uso yo, es basicamente un GNU Emacs pre-conigurado con cosas que uno ya de por si usario. Corre rapido, bastante rapido, y tiene las combinaciones de teclas de Vim (nadie usa las de Emacs, lo siento pero son malisimas). Es mejor de usar Emacs solo? Para mi si, ya que no tengo muchas ganas de pasarme los proximos 20 años para tener una configuracion de Emacs parecida a esta. ¿Quiero entonces decir que no uses Emacs solo? No. Crear tu propio Emacs desde cero es una muy buena experiencia y practica, aparte de que terminte tener solamente lo que quieras y necesites. Quiza te caen mal varias de las cosas de DOOM Emacs, y estas deconstruyendolo mas que construyendolo—en ese caso, quiza seria mejor empezar en blanco. Yo solamente soy medio vago, y me gusta lo que DOOM Emacs trae.
+Doom EMACS, que es lo que uso yo, es básicamente un GNU Emacs pre-configurado con cosas que uno ya de por si usaría. Corre rápido, bastante rápido, y tiene las combinaciones de teclas de Vim (nadie usa las de Emacs, lo siento pero son malísimas). Es mejor de usar Emacs solo? Para mi si, ya que no tengo muchas ganas de pasarme los próximos 20 años para tener una configuración de Emacs parecida a esta. ¿Quiero entonces decir que no uses Emacs solo? No. Crear tu propio Emacs desde cero es una muy buena experiencia y practica, aparte de que permite tener solamente lo que quieras y necesites. Quizá te caen mal varias de las cosas de DOOM Emacs, y estas deconstruyendolo mas que construyéndolo—en ese caso, quizá seria mejor empezar en blanco. Yo solamente soy medio vago, y me gusta lo que DOOM Emacs trae.
 
 * TABLA DE CONTENIDOS :toc:
+- [[#lenguaje][LENGUAJE]]
 - [[#prefacio][PREFACIO]]
 - [[#beacon][BEACON]]
 - [[#marcadores-y-buffers][MARCADORES Y BUFFERS]]
@@ -27,16 +28,16 @@ Doom EMACS, que es lo que uso yo, es basicamente un GNU Emacs pre-conigurado con
 - [[#pestañas][PESTAÑAS]]
 - [[#clippy][CLIPPY]]
 - [[#tablero][TABLERO]]
-  - [[#configuracion-del-tablero][Configuracion del Tablero]]
+  - [[#configuración-del-tablero][Configuración del Tablero]]
   - [[#tablero-en-emacsclient][Tablero en Emacsclient]]
 - [[#dired][DIRED]]
-  - [[#combinacion-de-teclas-para-abrir-dired][Combinacion de Teclas para Abrir Dired]]
+  - [[#combinación-de-teclas-para-abrir-dired][Combinación de Teclas para Abrir Dired]]
   - [[#combinaciones-de-teclas-dentro-de-dired][Combinaciones de Teclas Dentro de Dired]]
   - [[#combinaciones-de-teclado-con-pee-dired-activado][Combinaciones de Teclado con Pee-Dired Activado]]
 - [[#temas-doom][TEMAS DOOM]]
 - [[#emojis][EMOJIS]]
 - [[#evaluar-expresiones-elisp][EVALUAR EXPRESIONES ELISP]]
-- [[#tipo-de-fuente-tipografica][TIPO DE FUENTE TIPOGRAFICA]]
+- [[#tipo-de-fuente-tipográfica][TIPO DE FUENTE TIPOGRÁFICA]]
 - [[#insertar-fecha][INSERTAR FECHA]]
 - [[#ivy][IVY]]
   - [[#ivy-posframe][IVY-POSFRAME]]
@@ -58,13 +59,19 @@ Doom EMACS, que es lo que uso yo, es basicamente un GNU Emacs pre-conigurado con
 - [[#modo-winner][MODO WINNER]]
 - [[#zap-to-char][ZAP-TO-CHAR]]
 
-* PREFACIO
-Esta configuracion asume que usas tambien mi "init.el" y "packages.el", o si no, algunas (muchas) cosas no van a andar. Si no los vas a usar, al menos fijate que tengas activados y/o instalados los paquetes y otras necesidades relacionadas a esta configuracion. Cuando quieras editar config.el, editas (o añadi) este documento, config.org. Los cambios se van a guardar automaticamente en config.el cuando salves.
+* LENGUAJE
+Esto es para decirle a flyspell, el auto-corrector usado acá, que use el diccionario español.
+#+begin_src emacs-lisp
+(ispell-change-dictionary "espanol" t)
+#+end_src
 
-Agradecimientos a Derek Taylor, quien fue la inspiracion para esta configuracion.
+* PREFACIO
+Esta configuración asume que usas también mi "init.el" y "packages.el", o si no, algunas (muchas) cosas no van a andar. Si no los vas a usar, al menos fíjate que tengas activados y/o instalados los paquetes y otras necesidades relacionadas a esta configuración. Cuando quieras editar config.el, editas (o añadí) este documento, config.org. Los cambios se van a guardar automáticamente en config.el cuando salves.
+
+Agradecimientos a Derek Taylor, quien fue la inspiración para esta configuración.
 
 * BEACON
-Hace que brille el cursor cuando te moves para no perderlo. Esto lo hace una variable global.
+Hace que brille el cursor cuando te mueves para no perderlo. Esto lo hace una variable global.
 
 #+begin_src emacs-lisp
 (beacon-mode 1)
@@ -73,7 +80,7 @@ Hace que brille el cursor cuando te moves para no perderlo. Esto lo hace una var
 * MARCADORES Y BUFFERS
 
 ** Marcadores
-Con los marcadores, uno puedo poner ciertos articulos en "favoritos" y acceder a ellos cuando quiero (incluso despues de cerrar la sesion actual de Emacs). Y, si esta configurado, aparecen tambien en el tablero cuando entras a DOOM Emacs
+Con los marcadores, uno puedo poner ciertos artículos en "favoritos" y acceder a ellos cuando quiero (incluso despues de cerrar la sesion actual de Emacs). Y, si esta configurado, aparecen también en el tablero cuando entras a DOOM Emacs
 
 #+begin_src emacs-lisp
 (map! :leader
@@ -83,9 +90,9 @@ Con los marcadores, uno puedo poner ciertos articulos en "favoritos" y acceder a
 #+end_src
 
 ** Buffers
-Cuando abris un archivo, cuando abris dired, cuando haces casi TODO en Emacs, lo que estas viendo es un buffer. Lo que hace ibuffer es darte una lista de todos tus buffers, asi como tambien las herramientas para navegarlos y filtrarlos.
+Cuando abrís un archivo, cuando abrís dired, cuando haces casi TODO en Emacs, lo que estas viendo es un buffer. Lo que hace ibuffer es darte una lista de todos tus buffers, asi como tambien las herramientas para navegarlos y filtrarlos.
 
-| COMANDO         | DESCRIPCION             | COMBINACION DE TECLAS |
+| COMANDO         | DESCRIPCIÓN             | COMBINACIÓN DE TECLAS |
 |-----------------+-------------------------+-----------------------|
 | ibuffer         | Lanzar ibuffer          | SPC b i               |
 | kill-buffer     | Cerrar el buffer actual | SPC b k               |
@@ -94,7 +101,7 @@ Cuando abris un archivo, cuando abris dired, cuando haces casi TODO en Emacs, lo
 | save-buffer     | Guardar buffer actual   | SPC b s               |
 
 ** Combinaciones de Teclas Dentro del Modo Ibuffer
-| COMANDO                           | DESCRIPCION                                 | COMBINACION DE TECLAS |
+| COMANDO                           | DESCRIPCIÓN                                 | COMBINACIÓN DE TECLAS |
 |-----------------------------------+---------------------------------------------+-----------------------|
 | ibuffer-mark-forward              | Marcar el buffer                            | m                     |
 | ibuffer-unmark-forward            | Desmarcar el buffer                         | u                     |
@@ -104,14 +111,14 @@ Cuando abris un archivo, cuando abris dired, cuando haces casi TODO en Emacs, lo
 | ibuffer-filter-by-filename        | Ibuffer filtro por nombre (camino completo) | f f                   |
 | ibuffer-filter-by-mode            | Ibuffer filtro por modo                     | f m                   |
 | ibuffer-filter-by-name            | Ibuffer filtro por nombre                   | f n                   |
-| ibuffer-filter-disable            | Desabilitar filtro de ibuffer               | f x                   |
+| ibuffer-filter-disable            | Deshabilitar filtro de ibuffer               | f x                   |
 | ibuffer-do-kill-lines             | Ocultar buffers marcados                    | g h                   |
 | ibuffer-update                    | Restaurar buffers ocultos                   | g H                   |
 
 * PESTAÑAS
-Para activar las pestañas, descomenta "tabs" en init.el. Basicamente funcionan como las pestañas de un navegador como Chrome, y hacen el editar multiples documentos un poco mas comodo. Lo siguiente son algunas combinaciones de teclas para manejar dichas pestañas.
+Para activar las pestañas, descomenta "tabs" en init.el. Básicamente funcionan como las pestañas de un navegador como Chrome, y hacen el editar múltiples documentos un poco mas cómodo. Lo siguiente son algunas combinaciones de teclas para manejar dichas pestañas.
 
-| COMANDO                     | DESCRIPCION                            | COMBINACION DE TECLAS |
+| COMANDO                     | DESCRIPCIÓN                            | COMBINACIÓN DE TECLAS |
 |-----------------------------+----------------------------------------+-----------------------|
 | centaur-tabs-mode           | /Alternar pestañas globalmente/          | SPC t c               |
 | centaur-tabs-local-mode     | /Alternar pestañas en la pantalla local/ | SPC t C               |
@@ -139,24 +146,24 @@ Para activar las pestañas, descomenta "tabs" en init.el. Basicamente funcionan 
 #+end_src
 
 * CLIPPY
-Vuelve el pelotudo de Microsoft Office! Este monito nos ayudara describiendo funciones y varibales cuando usamos las teclas correspondientes mientras esta el cursor arriba de lo que queremos explicado. Usando esto, se nos va a aperecer una pequeña ventana con documentacion y el grande y famoso Clippy en carne y hueso.
+Vuelve el pelotudo de Microsoft Office! Este monito nos ayudara describiendo funciones y variables cuando usamos las teclas correspondientes mientras esta el cursor arriba de lo que queremos explicado. Usando esto, se nos va a aparecer una pequeña ventana con documentación y el grande y famoso Clippy en carne y hueso.
 
-| COMANDO                  | DESCRIPCION                                 | COMBINACION DE TECLAS |
+| COMANDO                  | DESCRIPCIÓN                                 | COMBINACIÓN DE TECLAS |
 |--------------------------+---------------------------------------------+-----------------------|
-| clippy-describe-function | /Clippy describe una funcion bajo el cursor/  | SPC c h f             |
+| clippy-describe-function | /Clippy describe una función bajo el cursor/  | SPC c h f             |
 | clippy-describe-variable | /Clippy describe una variable bajo el cursor/ | SPC c h v             |
 
 #+begin_src emacs-lisp
 (map! :leader
       (:prefix ("c h" . "Invocar a Clippy")
-       :desc "Clippy describe una funcion bajo el cursor" "f" #'clippy-describe-function
+       :desc "Clippy describe una función bajo el cursor" "f" #'clippy-describe-function
        :desc "Clippy describe una variable bajo el cursor" "v" #'clippy-describe-variable))
 #+end_src
 
 * TABLERO
 
-** Configuracion del Tablero
-El tablero de Emacs es lo primero que vez cuando lo abris. Te muestra tus archivos recientes, tus marcadores, tus agendas, configuraciones y la imagen (o ASCII) que has elegido para aparecer en el mismo. DOOM Emacs ya vieno con su propio tablero pre-configurado, que esta bastante bueno, asi que si queres podes comentar esta sección del documeto y seguir adelante.
+** Configuración del Tablero
+El tablero de Emacs es lo primero que vez cuando lo abrís. Te muestra tus archivos recientes, tus marcadores, tus agendas, configuraciones y la imagen (o ASCII) que has elegido para aparecer en el mismo. DOOM Emacs ya vieno con su propio tablero pre-configurado, que esta bastante bueno, asi que si queres podes comentar esta sección del documeto y seguir adelante.
 
 #+begin_src emacs-lisp
 (add-hook! '+doom-dashboard-functions :append
@@ -196,37 +203,37 @@ Esto es para que el cliente de emacs, si esta activado, siempre se abra en el ta
 #+end_src
 
 * DIRED
-Dired es el gestor de archivos de Emacs. A seguir estan la combinaciones de teclas de dired, incluyendo las usadas para ver imagenes en el mismo.
+Dired es el gestor de archivos de Emacs. A seguir están la combinaciones de teclas de dired, incluyendo las usadas para ver imágenes en el mismo.
 
-** Combinacion de Teclas para Abrir Dired
-| COMANDO    | DESCRIPCION                          | COMBINACION DE TECLAS |
+** Combinación de Teclas para Abrir Dired
+| COMANDO    | DESCRIPCIÓN                          | COMBINACIÓN DE TECLAS |
 |------------+--------------------------------------+-----------------------|
 | dired      | /Abrir gestor de archivos dired/       | SPC d d               |
 | dired-jump | /Saltar al directorio actual en dired/ | SPC d j               |
 
 ** Combinaciones de Teclas Dentro de Dired
 
-*** Comandos basicos de dired
-| COMANDO                | DESCRIPCION                                              | COMBINACION DE TECLAS |
+*** Comandos básicos de dired
+| COMANDO                | DESCRIPCIÓN                                              | COMBINACIÓN DE TECLAS |
 |------------------------+----------------------------------------------------------+-----------------------|
 | dired-view-file        | /Ver el archivo en dired/                                  | SPC d v               |
-| dired-up-directory     | /Subir en el arbol de directorios/                         | h                     |
-| dired-find-file        | /Bajar en el arbol de directorios (o abrir si es archivo)/ | l                     |
+| dired-up-directory     | /Subir en el árbol de directorios/                         | h                     |
+| dired-find-file        | /Bajar en el árbol de directorios (o abrir si es archivo)/ | l                     |
 | dired-next-line        | Bajar a la siguiente línea                               | j                     |
 | dired-previous-line    | Subir a la línea anterior                                | k                     |
 | dired-mark             | Marcar archivo en el punto                               | m                     |
-| dired-unmark           | Desmarcar archvio en el punto                            | u                     |
+| dired-unmark           | Desmarcar archivo en el punto                            | u                     |
 | dired-do-copy          | Copiar archivo actual o archivos marcados                | C                     |
 | dired-do-rename        | Renombrar archivo actual o archivos marcados             | R                     |
 | dired-hide-details     | Activar/desactivar listado detallado                     | (                     |
-| dired-git-info-mode    | Activar/desactivar informacion de git                    | )                     |
-| dired-create-directory | Crear nuevo directorio vacio                             | +                     |
+| dired-git-info-mode    | Activar/desactivar información de git                    | )                     |
+| dired-create-directory | Crear nuevo directorio vació                             | +                     |
 | dired-diff             | Comparar archivo en el punto con otro                    | =                     |
-| dired-subtree-toggle   | Alternar visualizacion del subárol en el punto           | TAB                   |
+| dired-subtree-toggle   | Alternar visualización del subárbol en el punto          | TAB                   |
 
 *** Comandos de dired usando regex
 
-| COMANDO                 | DESCRIPCION                            | COMBINACION DE TECLAS |
+| COMANDO                 | DESCRIPCIÓN                            | COMBINACIÓN DE TECLAS |
 |-------------------------+----------------------------------------+-----------------------|
 | dired-mark-files-regexp | Marcar archivos usando regex           | % m                   |
 | dired-do-copy-regexp    | Copiar archivos usando regex           | % C                   |
@@ -235,7 +242,7 @@ Dired es el gestor de archivos de Emacs. A seguir estan la combinaciones de tecl
 
 *** Permisos y propiedad de archivos
 
-| COMANDO         | DESCRIPCION                                      | COMBINACION DE TECLAS |
+| COMANDO         | DESCRIPCIÓN                                      | COMBINACIÓN DE TECLAS |
 |-----------------+--------------------------------------------------+-----------------------|
 | dired-do-chgrp  | Cambiar el grupo de los archivos marcados        | g G                   |
 | dired-do-chmod  | Cambiar el modo de los archivos marcados         | M                     |
@@ -291,13 +298,13 @@ Dired es el gestor de archivos de Emacs. A seguir estan la combinaciones de tecl
 #+end_src
 
 ** Combinaciones de Teclado con Pee-Dired Activado
-Si peep-dired esta activado, tendras vistas previas de las imagenes a medida que subes y bajas con 'j' y 'k'
+Si peep-dired esta activado, tendrás vistas previas de las imágenes a medida que subes y bajas con 'j' y 'k'
 
-| COMANDO              | DESCRIPCION                                | COMBINACION DE TECLAS |
-|----------------------+--------------------------------------------+-----------------------|
-| peep-dired           | /Toggle previews within dired/             | SPC d p               |
-| peep-dired-next-file | /Move to next file in peep-dired-mode/     | j                     |
-| peep-dired-prev-file | /Move to previous file in peep-dired-mode/ | k                     |
+| COMANDO              | DESCRIPCIÓN                               | COMBINACIÓN DE TECLAS |
+|----------------------+-------------------------------------------+-----------------------|
+| peep-dired           | /Alternar vistas previas en dired/          | SPC d p               |
+| peep-dired-next-file | /Ir al siguiente archivo en modo pee-dired/ | j                     |
+| peep-dired-prev-file | /Ir al archivo anterior en modo pee-dired/  | k                     |
 
 #+BEGIN_SRC emacs-lisp
 (evil-define-key 'normal peep-dired-mode-map
@@ -307,7 +314,7 @@ Si peep-dired esta activado, tendras vistas previas de las imagenes a medida que
 #+END_SRC
 
 * TEMAS DOOM
-Establece el tema de DOOM Emacs. A mi, personalmente, me gusta doom-dracula, pero vos cambialo si queres.  To try out new themes, I set a keybinding for counsel-load-theme with 'SPC h t'.
+Establece el tema de DOOM Emacs. A mi, personalmente, me gusta doom-dracula, pero vos cámbialo si queres. Usa 'SPC h t' para probar otros temas
 
 #+BEGIN_SRC emacs-lisp
 (setq doom-theme 'doom-dracula)
@@ -324,31 +331,31 @@ Emojify mostrar emojis en Emacs.
 #+end_src
 
 * EVALUAR EXPRESIONES ELISP
-Changing some keybindings from their defaults to better fit with Doom Emacs, and to avoid conflicts with my window managers which sometimes use the control key in their keybindings.  By default, Doom Emacs does not use 'SPC e' for anything, so I choose to use the format 'SPC e' plus 'key' for these (I also use 'SPC e' for 'eww' keybindings).
+Cambiando algunas combinaciones de sus valores por defecto para que encajen mejor con DOOM Emacs  Por defecto, DOOM Emacs no usa 'SPC e' para nada, así que se usa el formato 'SPC e' más 'tecla' para estos (también se usa 'SPC e' para los comandos 'eww').
 
-| COMANDO         | DESCRIPCION                                         | COMBINACION DE TECLAS |
-|-----------------+-----------------------------------------------------+-----------------------|
+| COMANDO         | DESCRIPCIÓN                                       | COMBINACIÓN DE TECLAS |
+|-----------------+---------------------------------------------------+-----------------------|
 | eval-buffer     | /Evaluar elisp en el buffer/                        | SPC e b               |
 | eval-defun      | /Evaluar el defun que contiene o después del punto/ | SPC e d               |
-| eval-expression | /Evalaur una expresion elisp/                       | SPC e e               |
-| eval-last-sexp  | /Evaluar expresion elisp antes del punto/           | SPC e l               |
-| eval-region     | /Evaluar elisp en la region/                        | SPC e r               |
+| eval-expression | /Evaluar una expresión elisp/                       | SPC e e               |
+| eval-last-sexp  | /Evaluar expresión elisp antes del punto/           | SPC e l               |
+| eval-region     | /Evaluar elisp en la región/                        | SPC e r               |
 
 #+Begin_src emacs-lisp
 (map! :leader
       (:prefix ("e". "evaluate/ERC/EWW")
        :desc "Evaluar elisp en el buffer" "b" #'eval-buffer
        :desc "Evaluar defun" "d" #'eval-defun
-       :desc "Evaluar expresion elisp" "e" #'eval-expression
+       :desc "Evaluar expresión elisp" "e" #'eval-expression
        :desc "Evaluar ultima sexpression" "l" #'eval-last-sexp
-       :desc "Evluar elisp en la region" "r" #'eval-region))
+       :desc "Evaluar elisp en la region" "r" #'eval-region))
 #+END_SRC
 
-* TIPO DE FUENTE TIPOGRAFICA
-Configuracion relacionada con el tipo de fuente tipografica usada dentro de DOOM Emacs:
-+ 'doom-font' -- fuente monoespaciada estandar que es usada para la mayoria de las cosas en Emacs.
-+ 'doom-variable-pitch-font' -- fuente variable usada que es util para algunos plugins de Emacs.
-+ 'doom-big-font' -- usado en doom-big-font-mode; util para presentaciones
+* TIPO DE FUENTE TIPOGRÁFICA
+Configuración relacionada con el tipo de fuente tipográfica usada dentro de DOOM Emacs:
++ 'doom-font' -- fuente monoespaciada estándar que es usada para la mayoría de las cosas en Emacs.
++ 'doom-variable-pitch-font' -- fuente variable usada que es útil para algunos plugins de Emacs.
++ 'doom-big-font' -- usado en doom-big-font-mode; útil para presentaciones
 + 'font-lock-comment-face' -- para comentarios.
 + 'font-lock-keyword-face' -- elisp. para palabras clave con significado especial como 'setq' en elisp
 
@@ -366,7 +373,7 @@ Configuracion relacionada con el tipo de fuente tipografica usada dentro de DOOM
 
 
 * INSERTAR FECHA
-Algunas funciones para insertar fechas. La función 'insert-todays-date' puede usarse de tres maneras diferentes: (1) sólo la combinacion de teclas sin el prefijo de argumento universal, (2) con un prefijo de argumento universal, o (3) con dos prefijos de argumento universal. El prefijo de argumento universal es 'SPC-u' en DOOM Emacs (C-u en Emacs normal). La función 'insert-any-date' sólo da salida a un formato, que es el mismo formato que 'insert-todays-date' sin prefijo.
+Algunas funciones para insertar fechas. La función 'insert-todays-date' puede usarse de tres maneras diferentes: (1) sólo la combinación de teclas sin el prefijo de argumento universal, (2) con un prefijo de argumento universal, o (3) con dos prefijos de argumento universal. El prefijo de argumento universal es 'SPC-u' en DOOM Emacs (C-u en Emacs normal). La función 'insert-any-date' sólo da salida a un formato, que es el mismo formato que 'insert-todays-date' sin prefijo.
 
 | COMANDO               | EJEMPLO DE RESULTADO      | COMBINACION DE TECLAS |
 |-----------------------+---------------------------+-----------------------|

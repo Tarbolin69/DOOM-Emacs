@@ -1,3 +1,5 @@
+(ispell-change-dictionary "espanol" t)
+
 (beacon-mode 1)
 
 (map! :leader
@@ -23,7 +25,7 @@
 
 (map! :leader
       (:prefix ("c h" . "Invocar a Clippy")
-       :desc "Clippy describe una funcion bajo el cursor" "f" #'clippy-describe-function
+       :desc "Clippy describe una función bajo el cursor" "f" #'clippy-describe-function
        :desc "Clippy describe una variable bajo el cursor" "v" #'clippy-describe-variable))
 
 (add-hook! '+doom-dashboard-functions :append
@@ -118,9 +120,9 @@
       (:prefix ("e". "evaluate/ERC/EWW")
        :desc "Evaluar elisp en el buffer" "b" #'eval-buffer
        :desc "Evaluar defun" "d" #'eval-defun
-       :desc "Evaluar expresion elisp" "e" #'eval-expression
+       :desc "Evaluar expresión elisp" "e" #'eval-expression
        :desc "Evaluar ultima sexpression" "l" #'eval-last-sexp
-       :desc "Evluar elisp en la region" "r" #'eval-region))
+       :desc "Evaluar elisp en la region" "r" #'eval-region))
 
 (setq doom-font (font-spec :family "JetBrains Mono" :size 14)
       doom-variable-pitch-font (font-spec :family "Ubuntu" :size 14)
